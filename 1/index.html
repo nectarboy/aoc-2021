@@ -1,0 +1,45 @@
+<pre id='part1'></pre>
+<pre id='part2'></pre>
+<script src='input.js'></script>
+<script>
+
+    function part1() {
+        var output = 0;
+        var lines = input.split("\n");
+
+        for (var i = 1; i < lines.length; i++) {
+            var prev = lines[i-1]|0;
+            var now = lines[i]|0;
+
+            if (now > prev) {
+                output++;
+            }
+        }
+
+        return output;
+    }
+
+    function part2() {
+        var output = 0;
+        var lines = input.split("\n");
+
+        var prev = 0;
+        for (var i = 1; i < lines.length; i++) {
+            var first   = 0|lines[i];
+            var second  = 0|lines[i+1];
+            var third   = 0|lines[i+2];
+            var sum = first + second + third;
+
+            if (sum > prev) {
+                output++;
+            }
+            prev = sum;
+        }
+
+        return output;
+    }
+
+    document.getElementById('part1').innerHTML = part1();
+    document.getElementById('part2').innerHTML = part2();
+
+</script>
