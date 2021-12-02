@@ -1,0 +1,1 @@
+const dayscompleted = 2;
